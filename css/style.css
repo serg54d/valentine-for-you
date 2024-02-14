@@ -1,0 +1,211 @@
+@charset "UTF-8";
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,regular,500,600,700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  /* по умолчанию */
+  /* font-size: 16px;  */
+}
+
+body {
+  line-height: 1;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 13px;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* ------------------------------ */
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[class*=__container] {
+  max-width: 1410px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+.valentine-day {
+  padding-bottom: 100px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #413d3d;
+}
+.valentine-day__container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.valentine-day__title {
+  font-size: 55px;
+  text-align: center;
+  color: rgb(161, 59, 161);
+}
+@media (max-width: 1410px) {
+  .valentine-day__title {
+    font-size: calc(35px + 20 * (100vw - 320px) / 1090);
+  }
+}
+.heart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  min-height: 150px;
+  background: #eb3f84;
+  top: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+      -ms-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+  -webkit-animation: heart 1s infinite;
+          animation: heart 1s infinite;
+}
+.heart:before, .heart:after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #eb3f84;
+  border-radius: 50%;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.heart:before {
+  top: -80px;
+  left: 0;
+}
+.heart:after {
+  left: 80px;
+  top: 0;
+}
+
+@-webkit-keyframes heart {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+  20% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(1);
+            transform: translateX(-50%) rotate(-45deg) scale(1);
+  }
+  40% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+  60% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(1);
+            transform: translateX(-50%) rotate(-45deg) scale(1);
+  }
+  80% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+}
+
+@keyframes heart {
+  0% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+  20% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(1);
+            transform: translateX(-50%) rotate(-45deg) scale(1);
+  }
+  40% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+  60% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(1);
+            transform: translateX(-50%) rotate(-45deg) scale(1);
+  }
+  80% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) rotate(-45deg) scale(0.75);
+            transform: translateX(-50%) rotate(-45deg) scale(0.75);
+  }
+}

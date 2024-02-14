@@ -1,0 +1,19 @@
+@use "sass:math";
+
+$maxWidth: 1410;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+//EM
+@function em($px) {
+	$result: math.div($px, 16) + em;
+	@return $result;
+}

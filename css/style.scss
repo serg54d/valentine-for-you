@@ -1,0 +1,133 @@
+@import "_mixins";
+// @import "_fonts";
+@import "_null";
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,regular,500,600,700&display=swap");
+
+// &display=swap
+// &subset=cyrillic-ext
+//
+
+$containerWidth: 1410px;
+
+//брейк-поинты
+
+$pc: $containerWidth; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767.98px; // Телефоны L
+$mobileSmall: 479.98px; // Телефоны S
+
+// colors
+
+$grey: #a2a6b0;
+$white: #fff;
+$valentines: #eb3f84;
+
+body {
+	line-height: 1;
+	color: #fff;
+	font-family: "Poppins";
+	font-size: 13px;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ------------------------------ */
+
+.main {
+	flex-grow: 1;
+}
+
+[class*="__container"] {
+	max-width: $containerWidth;
+	margin: 0px auto;
+	padding: 0px 15px;
+}
+
+.main {
+}
+.valentine-day {
+	padding-bottom: 100px;
+	min-height: 100vh;
+	display: flex;
+	background-color: #413d3d;
+	&__container {
+		flex: 1 1 auto;
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__title {
+		font-size: 55px;
+		text-align: center;
+		color: rgb(161, 59, 161);
+		@media (max-width: $pc) {
+			@include adaptiv-font(55, 35);
+		}
+	}
+
+	&__heart {
+	}
+}
+.heart {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	width: 150px;
+	min-height: 150px;
+	background: $valentines;
+	top: 100px;
+	left: 50%;
+	transform: translateX(-50%) rotate(-45deg);
+	animation: heart 1s infinite;
+
+	//
+
+	&:before,
+	&:after {
+		content: "";
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		display: flex;
+		background: $valentines;
+		border-radius: 50%;
+
+		transform: rotate(-45deg);
+	}
+	&:before {
+		top: -80px;
+		left: 0;
+	}
+	&:after {
+		left: 80px;
+		top: 0;
+	}
+}
+
+@keyframes heart {
+	0% {
+		transform: translateX(-50%) rotate(-45deg) scale(0.75);
+	}
+	20% {
+		transform: translateX(-50%) rotate(-45deg) scale(1);
+	}
+	40% {
+		transform: translateX(-50%) rotate(-45deg) scale(0.75);
+	}
+	60% {
+		transform: translateX(-50%) rotate(-45deg) scale(1);
+	}
+	80% {
+		transform: translateX(-50%) rotate(-45deg) scale(0.75);
+	}
+	100% {
+		transform: translateX(-50%) rotate(-45deg) scale(0.75);
+	}
+}
